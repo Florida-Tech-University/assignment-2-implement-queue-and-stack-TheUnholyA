@@ -33,7 +33,6 @@ public class StackUsingQueue<E> implements StackADT<E> {
         // 1) q.enqueue(e)
         q.enqueue(e);
         // 2) rotate (size-1) times:
-        k to the front.
         int currentSize = q.size();
         for (int i = 0; i < currentSize - 1; i++) {
             q.enqueue(q.dequeue());
