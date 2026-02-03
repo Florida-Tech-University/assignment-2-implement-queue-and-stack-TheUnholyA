@@ -13,20 +13,23 @@ public class ArrayQueue<E> implements QueueADT<E> {
 
     @Override
     public int size() {
-        // TODO: return current number of elements
-        return -1;
+        // TODO: re
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
         // TODO: return true if size == 0
-        return true;
+        return size == 0;
     }
 
     @Override
     public E first() {
-        // TODO: if empty return null; else return data[front]
-        return null;
+        // TODO: if empty return null; else return data[front
+        if(isEmpty()){
+            return null;
+        }
+        return data[font];
     }
 
     @Override
@@ -38,18 +41,31 @@ public class ArrayQueue<E> implements QueueADT<E> {
         // 2) compute available index = (front + size) % data.length
         // 3) store e there
         // 4) increment size
+          if (size == data.length) {
+            throw new IllegalStateException("Queue is full");
+        }
+         int avail = (front + size) % data.length;
+        data[avail] = e;
+        size++;
     }
 
     @Override
     public E dequeue() {
         // TODO:
         // 1) if empty return null
+        if(isEmpty()) {
+            return null;
+        }
         // 2) store answer = data[front]
+        E answer = data[front];
         // 3) set data[front] = null (help GC)
+        data[front] = null;
         // 4) front = (front + 1) % data.length
+        front = (front + 1) % data.length;
         // 5) decrement size
+        size-
         // 6) return answer
-        return null;
+        return answer;
     }
 
     // Helpful for debugging (not graded)
