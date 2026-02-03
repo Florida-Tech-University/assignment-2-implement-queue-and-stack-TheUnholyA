@@ -42,6 +42,6 @@ public class StackUsingQueue<E> implements StackADT<E> {
     @Override
     public E pop() {
         // TODO: return q.dequeue()
-        return q.dequeue;
+        return q.dequeue();
     }
 }
